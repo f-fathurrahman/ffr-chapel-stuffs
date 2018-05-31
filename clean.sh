@@ -1,1 +1,1 @@
-rm -f *.x *.o
+rm -f *.exe *.o

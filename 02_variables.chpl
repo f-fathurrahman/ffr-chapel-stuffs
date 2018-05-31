@@ -22,3 +22,29 @@ var myCmplx: complex = 1 + 1.2i;
 var myBool: bool = true;
 var myStr: string = "This is a string";
 var myStr2: string = 'This is also a string';
+
+// some types can have size
+var my8Int: int(8) = 10; // 8 bit sized int
+var my64Real: real(64) = 5.31; // 64 bit sized real
+
+writeln("my8Int = ", my8Int);
+writeln("my64Real = ", my64Real);
+
+// type casting
+var intFromReal = myReal : int;
+var intFromReal2: int = myReal : int;
+
+writeln("myReal = ", myReal);
+writeln("intFromReal = ", intFromReal);
+writeln("intFromReal2 = ", intFromReal2);
+
+// type aliasing
+type chroma = int;
+type RGBColor = 3*chroma;
+
+var black: RGBColor = (0, 0, 0);
+var white: RGBColor = (255, 255, 255);
+
+writeln("black = ", black);
+writeln("white = ", white);
+
