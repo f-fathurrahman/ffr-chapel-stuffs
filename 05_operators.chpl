@@ -101,3 +101,12 @@ a <<= 3;
 // please see modules/standard/FormattedIO
 writef("a = %bi\n", a);
 
+// swap operator
+var ii = 1;
+var jj = 3;
+
+writeln("Before <=> (swap): ii = ", ii, ", jj = ", jj);
+
+ii <=> jj;
+
+writeln("After  <=> (swap): ii = ", ii, ", jj = ", jj);
