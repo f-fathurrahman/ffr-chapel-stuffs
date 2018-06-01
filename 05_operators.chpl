@@ -84,3 +84,20 @@ writeln(p2);
 writeln(p1 && p2);
 writeln(p1 || p2);
 
+// bitwise operators
+a = b << 10;
+a = c >> 5;
+a = ~b;
+a = b & c;
+a = a^b; // bitwise XOR
+
+// compound assigment operators
+a += b;
+a *= c;
+
+p &&= q;
+a <<= 3;
+
+// please see modules/standard/FormattedIO
+writef("a = %bi\n", a);
+
