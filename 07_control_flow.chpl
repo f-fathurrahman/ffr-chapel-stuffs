@@ -50,4 +50,38 @@ select inputOption {
   }
 }
 
+// while and do-while loops behaves like their C counterparts
+var j: int = 1;
+var jSum: int = 0;
+while( j <= 1000 ) {
+  jSum = jSum + j;
+  j = j + 1;
+}
+writeln("jSum = ", jSum);
+
+do {
+  jSum = jSum + j;
+  j = j + 1;
+} while( j <= 10000);
+writeln("jSum = ", jSum);
+
+
+// for loops behaves like those in Python
+// Ranges like 1..10 are first-class object
+for i in 1..10 do write(i, ", ");
+writeln();
+
+var iSum: int = 0;
+for i in 1..100 {
+  iSum = iSum + i;
+}
+writeln("iSum = ", iSum);
+
+for x in 1..10 {
+  for y in 1..10 {
+    write( (x,y), "\t");
+  }
+  writeln();
+}
+
 
