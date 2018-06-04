@@ -11,20 +11,38 @@ var A = Matrix(N,N),
 fillRandom(B);
 fillRandom(x);
 
-writeln();
-writeln("B = ");
-writeln(B);
+//writeln("\nB = ");
+//writeln(B);
 
-writeln();
-writeln("x = ");
-writeln(x);
+//writeln("\nx = ");
+//writeln(x);
 
 y = dot(B, x);
-writeln("y = dot(B,x) = ");
-writeln(y);
+//writeln("\ny = dot(B,x) = ");
+//writeln(y);
 
 A = outer(x,y);
-writeln("A = outer(x,y) = ");
-writeln(A);
+//writeln("\nA = outer(x,y) = ");
+//writeln(A);
 
+var X = Matrix(N,1);
+var Y = Matrix(N,1);
+
+X[{1..N},1] = x[{1..N}];
+
+//writeln("\nX = ");
+//writeln(X);
+
+A = eye(N);
+//writeln("\nA = ");
+//writeln(A);
+
+var ipiv : [1..N] c_int;
+Y = X;
+
+var info = gesv(lapack_memory_order.row_major, A, ipiv, Y);
+
+var res =+ reduce abs(x-y);
+
+writeln(res);
 
