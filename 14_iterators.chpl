@@ -32,5 +32,26 @@ for i in absolutelyNothing(10) {
 for (positive, negative) in zip(1..5, -5..-1) do
   writeln("positive = ", positive, " negative = ", negative);
 
+// zipper iteration can be used in the assignment of arrays
+var fromThatArray: [1..#5] int = [1,2,3,4,5];
+var toThisArray: [100..#5] int;
+
+// some zipper operations implement other operations
+// The first statement and the loop are equivalent
+toThisArray = fromThatArray;
+for (i,j) in zip(toThisArray.domain, fromThatArray.domain) {
+  toThisArray[i] = fromThatArray[j];
+}
+
+// These two chunks are also equivalent
+toThisArray = [j in -100..#5] j;
+writeln("toThisArray = ", toThisArray);
+
+for (i,j) in zip(toThisArray.domain, -100..#5) {
+  toThisArray[i] = j;
+}
+writeln("toThisArray = ", toThisArray);
+
+
 
 
